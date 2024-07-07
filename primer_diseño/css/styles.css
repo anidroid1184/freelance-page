@@ -1,0 +1,250 @@
+/* Codigo para mejorar la presentación
+y adaptación a diferentes dispositivos
+*/
+
+/* Importar fuente */
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*
+Selector de paleta de colores
+custom properties
+ */
+
+ :root{
+    /* Paleta de colores */
+    --negro:         #000000;
+    --blanco:        #FFFFFF;
+    --azulBackgroud: #b1e5e7;
+    --amarilloLimon: #D9ED92;
+    --verdeAmarillo: #B5E48C;
+    --verdeAzulClaro:#76C893;
+    --azulVerdoso:   #52B69A;
+    --azulLima:      #34A0A4;
+    --azulClaro:     #168AAD;
+    --azulTurquesa:  #1E6091;
+    --azulMate:      #1E6091;
+    --azulRey:       #184E77;
+
+    /* Fuentes */
+    --fuente: "Istok Web", sans-serif;
+
+ }
+
+/* Configuracion general */
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    /* Quitar modelo caja de css */
+    box-sizing: border-box;
+    /* Definir el scroll del sitio web */
+    scroll-snap-type: y mandatory ;
+}
+body {
+    font-size: 16px;
+    font-family: var(--fuente);
+    font-weight: normal;
+    /* Degradado del fondo */
+    background: rgb(234, 244, 248);
+    background: linear-gradient(0deg, rgba(234, 244, 248, 1) 17%, rgba(147, 219, 241, 1) 98%);
+
+}
+
+/* Tipografia */
+
+
+h1{
+    font-size: 3.8rem;
+    text-align: center;
+    color: var(--negro);
+}
+h2{
+    font-size: 2.8rem;
+    text-align: center;
+    height: 3rem;
+    margin: 3rem;
+}
+h3{
+    font-size: 1.8rem;
+    text-align: center;
+}
+/* Cambio de color titulo */
+span{
+    color: var(--azulMate);
+
+/* Elementos reutilizables  */
+}
+.button{
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--azulMate);
+    border-radius: 5rem;
+    padding:5px;
+    border-style: dashed;
+    /* volverla mayusculas */
+    text-transform: uppercase;
+    margin: 1rem;
+    width: auto;
+    height: auto;
+    
+}
+
+/* Modulos Navegador */
+.contenedorNav {
+    max-width: 120rem;/* Para que tome el espacio al máximo */
+    margin: 0, auto;
+}
+.navBackground {
+    background-color: var(--azulTurquesa);
+}
+.navegadorPrincipal {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Barra de navegación en responsive desing */
+@media (min-width: 380px) and (max-width: 768px){
+    .navegadorPrincipal{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.navegadorPrincipal  a{
+    padding: 0.7em;
+    color: var(--blanco);
+    /* Quitar subrayado */
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+.navegadorPrincipal a:hover {
+    background-color: var(--azulLima);
+    color: var(--azulRey);
+}
+
+
+/* Sección debajo de la barra de navegacion */
+.pImage{
+    background-image: url(../assets/bgImg.jpeg);
+    background-repeat: no-repeat;
+    /* Tamaño de la imagen */
+    background-size: cover;
+    position: relative;/* Permite desplazar este elemento de su posicion original */
+    height: 22rem;
+    max-width: 200rem;
+
+}
+
+.pImageContent {
+    color: var(--blanco);
+    font-weight: bold; 
+    position: absolute;/* Permite ubicar en el documento este elemnto hijo */
+    /* Hacer que cubra la imagen el contenido */
+    width: 100%;
+    height: 100%;
+    /* Dar transparencia a la imagen */
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Sección de servicios */
+.sombra {
+    /* Sombra para la tarjeta main */
+    -webkit-box-shadow: 1px 10px 10px 3px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 1px 10px 10px 3px rgba(0, 0, 0, 0.48);
+    box-shadow: 1px 10px 10px 3px rgba(0, 0, 0, 0.48);
+}
+main {
+    margin: 3rem;
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    grid-template-columns: 1fr;
+}
+
+.servicios, .navegadorPrincipal, .formulario {
+    /* generar scrolls */
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.servicios{
+    margin: 4rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+@media (min-width: 380px) and (max-width: 780px){
+    .servicios{
+        margin: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.seccionWeb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.iconos{
+    background-color: var(--blanco);
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.iconos svg{
+    width: 5rem;
+    height: 5rem;
+}
+/* Seccion formulario */
+.formulario {
+    /* Centra estos tipos de formularios */
+
+    margin: 0 auto;
+    /* Muestra el formulario escalado */
+    width: min(60rem, 100%);
+}
+/* Elminar bordes del formulario */
+.formulario fieldset{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem;
+}
+.formulario label{
+    font-size: 1.8rem;
+    font-weight: bold;
+
+}
+.campos{
+    margin-bottom: .5rem;
+    display: block;
+}
+.campos label{
+    margin-bottom: .5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.campos input, .campos textarea{
+    width: 100%;
+    border: none; 
+    padding: 1.2rem;
+}

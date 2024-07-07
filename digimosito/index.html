@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Digimonsito </title>
+        <!--cargar archivo css-->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!--h1 se usa solo una vez-->
+        <!--Dividir las partes de la pagina id es un identificador-->
+<!-- seleccionar digimon secicion -->
+
+        <section id="seleccionar-digimon">
+            <h1  class="Titulo">¡Bienvenido a Digimonsito!</h1>
+            <h2 class="subtitulo">Elige tu digimonsito:</h2>
+        <div id= 'tarjeta digimon' class="ordenTarjetas">
+            <!-- aca cargamos los pokemons desde js -->
+            <!-- for sirve para que cuando seleccionemos el label en vez del input, se seleccione el input -->
+        </div>
+
+            <!--Texto para elegir el pokemon-->
+            <button id="boton-seleccionar">Seleccionar Digimonsito</button>
+        </section>
+
+        <section id='seccion-canva'>
+            <h1  class="Titulo">¡Recorre el mapa con tu Digimon!</h1>
+            <canvas id='mapa'></canvas>
+            <button onclick="moverDerecha()">Mover Derecha</button>
+            <button onclick="moverIzquierda()">Mover Izquierda</button>
+            <button onclick="moverArriba()">Mover Arriba</button>
+            <button onclick="moverAbajo()">Mover Abajo</button>
+        </section>
+<!-- seleccionar movimientos seccion -->
+        <section id="seleccionar-movimientos">
+            <h1 class="Titulo">¡Comienza el combate!</h1>
+            <div class="tarjetasDigimonElegido">
+                <div id="jugadorImg">
+                    <label for="imgDigimonJugador">
+                        <span id="digimonJugadorNameImg">Tu digimon</span>
+                        <section id="imagenJugador">
+                        <!-- aca reemplazo la imagen -->
+                         </section>
+                    </label>
+                </div>
+                <div id="enemigoImg">
+                    <label for="imgDigimonEnemigo">
+                        <span id="digimonEnemigoNameImg">Enemigo Digimon</span>
+                        <section id="imagenEnemigo">
+                        <!-- aca reemplazo la imagen -->
+                        </section>
+                    </label>
+                 </div>
+            </div>
+            <h2 class="subtitulo">Elige tu ataque:</h2>
+            <!--El span sirve para poder modificar el valor dentro de el, con js-->
+            <div id= 'botones-ataques'class="ataques"> 
+
+            </div>
+
+            <section id="confirmar-ataque">
+                <p>¿Quieres confirmar el ataque?</p>
+                <div id="seccion-si-no">
+                <button id="boton-confirmar">Confirmar ataque</button>
+                <button id="boton-cancelar">Cancelar ataque</button>
+                </div>
+            </section>
+
+
+            <div id="seccion-secuencia-jugador">
+                <p id="secuencia-jugador" class="secuencias">
+                <!-- aca cargamos el ataque del enemigo -->
+                </p>
+            </div>
+
+            <div id="seccion-secuencia-enemigo">
+                <p id="secuencia-enemigo" class="secuencias">
+                <!-- aca cargamos el ataque del enemigo -->
+                </p>
+            </div>
+            
+
+
+            <div class="reiniciarCombate" id="reiniciar">
+                <div id="seccionReiniciar">
+                <p id="resultado-final-batalla">
+                    <!-- se genera el resultado final de la batalla -->
+                    <!-- resultado final del combate -->
+                </p>
+
+                <section id="boton-reiniciar-combate">
+                    <button id="boton-reiniciar">Reiniciar combate</button>  
+                </section>
+                </div>
+            </div>
+
+            <div id="Batalla-Digimonsito">
+                <div class="resultadosBatalla">
+                <div id="ataque-jugador-div">
+                    <div class="tarjetaVidasJugador" id="tarjeta-vidas-jugador">
+                        <p id="digimon-jugador"> </p>
+                        <p id="vidas-jugador">  </p>
+                        <div id="ataques-realizados-jugador"> </div>
+                    </div>
+                   <!--  aca cargamos el ataque del jugador -->
+                </div>
+
+                <div id="ataque-enemigo-div">
+                    <!-- aca cargamos el ataque enemigo -->
+                    <div class="tajetaVidasEnemigo" id="tarjeta-vidas-enemigo">
+                        <p id="digimon-enemigo"> </p>
+                        <p id="vidas-enemigo"> </p>
+                        <div id="ataques-realizados-enemigo"> </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    <!-- va a el final de código para que la pagina cargue más rapido -->
+    <!--cargar script en ruta - usamos ./carpeta/codigo para indicar que es la misma carpeta -  defer sirve para cargar todo el documento antes que el codigo js-->
+    <!-- Metodo para cargar el documento de html antes de cargar el js --<script defer src="./codigo/digimonsito.js"></script>--> 
+    <script defer src="./codigo/digimonsito.js" defer></script>
+    </body>
+</html>
